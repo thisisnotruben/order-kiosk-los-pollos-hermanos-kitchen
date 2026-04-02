@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: kitchen
+  datasource:
+      url: "jdbc:postgresql://localhost:5432/los_pollos_hermanos"
+      username: "admin"
+      password: "admin123"
+  jpa:
+      show-sql: true
+      properties:
+          dialect: "org.hibernate.dialect.PostgreSQLDialect"
