@@ -9,3 +9,16 @@ spring:
       show-sql: true
       properties:
           dialect: "org.hibernate.dialect.PostgreSQLDialect"
+rabbitmq:
+  host: localhost
+  port: 5672
+  username: guest
+  password: guest
+  queue:
+    name: food_item_work
+  exchange:
+    name: los_pollos_hermanos
+  routing:
+    key: los_pollos_hermanos-food_item_work
+workforce:
+  amount: 6

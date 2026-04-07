@@ -20,10 +20,10 @@ public class FoodItem {
     private int id;
 
     @Column(name = "fi_name")
-    private String fiName;
+    private String name;
 
     @Column(name = "fi_description")
-    private String fiDescription;
+    private String description;
 
     private String category;
 
