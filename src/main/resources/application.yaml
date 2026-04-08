@@ -14,11 +14,15 @@ rabbitmq:
   port: 5672
   username: guest
   password: guest
-  queue:
-    name: food_item_work
   exchange:
     name: los_pollos_hermanos
-  routing:
-    key: los_pollos_hermanos-food_item_work
+  queueFood:
+    name: food_item
+  routingFood:
+    key: los_pollos_hermanos-food_item
+  queueWorker:
+    name: worker
+  routingWorker:
+    key: los_pollos_hermanos-worker
 workforce:
   amount: 6

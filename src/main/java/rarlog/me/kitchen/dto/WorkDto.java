@@ -2,10 +2,12 @@ package rarlog.me.kitchen.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
 @AllArgsConstructor
-public class Work {
+@NoArgsConstructor
+public class WorkDto {
 
     private int orderId;
     private int foodId;
