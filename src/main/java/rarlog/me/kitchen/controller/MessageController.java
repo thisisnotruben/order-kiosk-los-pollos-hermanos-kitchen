@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 import lombok.RequiredArgsConstructor;
 import rarlog.me.kitchen.dto.OrderDto;
 import rarlog.me.kitchen.dto.OrderItemDto;
+import rarlog.me.kitchen.dto.OrderReceivedDto;
 import rarlog.me.kitchen.entity.CustomerOrder;
 import rarlog.me.kitchen.entity.FoodItem;
 import rarlog.me.kitchen.entity.OrderItem;
@@ -39,7 +40,7 @@ public class MessageController {
     private static final Logger LOGGER = LoggerFactory.getLogger(MessageController.class);
 
     @PostMapping("/order")
-    public ResponseEntity<String> recieveOrder(@RequestBody() OrderDto order) {
+    public ResponseEntity<OrderReceivedDto> recieveOrder(@RequestBody() OrderDto order) {
         LOGGER.info(String.format("Recieved order: %s", order));
 
         CustomerOrder customerOrder = CustomerOrder.builder()
@@ -61,7 +62,7 @@ public class MessageController {
 
         orderItemRepository.saveAll(orderItems);
         kitchen.prepareOrder(customerOrder);
-        return ResponseEntity.ok(String.valueOf(customerOrder.getId()));
+        return ResponseEntity.ok(new OrderReceivedDto(customerOrder.getId()));
     }
 
 }
