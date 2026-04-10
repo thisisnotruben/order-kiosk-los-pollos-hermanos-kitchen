@@ -86,8 +86,6 @@ public class Kitchen {
                 CustomerOrder customerOrder = customerOrderRepository.findById(work.getOrderId()).get();
                 customerOrder.setStatus(CustomerOrder.Status.READY.toString());
                 customerOrderRepository.save(customerOrder);
-                // TODO
-                // this where you notify customer that order is ready
             }
         }
     }
